@@ -102,6 +102,40 @@ npm run start:dev
 
 ---
 
+## 🔒 Commit Message Linting & Git Hooks
+
+This project uses **commitlint** and **husky** to enforce [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for commit messages.
+
+### How it works
+
+- On every `git commit`, husky will run commitlint to check your commit message.
+- If your message does not follow the Conventional Commits format, the commit will be rejected.
+
+### Example of valid commit messages
+
+- `feat: add user login feature`
+- `fix: correct typo in user service`
+- `docs: update README`
+- `refactor: improve query performance`
+- `test: add user service tests`
+- `chore: update dependencies`
+
+### How to re-enable hooks (if needed)
+
+If you clone the repo or reinstall dependencies, run:
+
+```bash
+npx husky install
+```
+
+### Add a new hook (example)
+
+```bash
+npx husky add .husky/pre-commit "npm run lint"
+```
+
+---
+
 ## 🖥️ Using pgAdmin4
 
 1. Go to [http://localhost:5050](http://localhost:5050)
@@ -137,4 +171,5 @@ npm run start:dev
 ## 📄 License
 
 MIT
+
 # nest-base
